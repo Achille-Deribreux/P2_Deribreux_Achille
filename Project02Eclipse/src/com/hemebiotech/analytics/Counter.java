@@ -7,10 +7,18 @@ import java.util.TreeMap;
 public class Counter {
 	public List<String> symptomsList;
 	
+	/**
+	 * 
+	 * @param a raw listing of all Symptoms obtained from a data source, duplicates are possible/probable
+	 */
 	 public Counter(List<String> symptomsList) {
 		 this.symptomsList = symptomsList;
 	}
 	 
+	 /**
+	 * 
+	 * @return Map with string symptom as Key and Integer occurrence as Value
+	 */
 	public Map<String, Integer> CountOccurences() {
 		Map <String, Integer> symptomsMap = new TreeMap <String, Integer>();
 		

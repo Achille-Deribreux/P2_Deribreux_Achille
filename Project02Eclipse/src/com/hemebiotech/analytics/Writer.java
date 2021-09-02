@@ -7,10 +7,18 @@ import java.util.Map;
 public class Writer {
 	private String filePath;
 	
+	/**
+	 * 
+	 * @param filepath a full or partial path to output file
+	 */
 	public Writer(String filePath) {
 		this.filePath = filePath;
 	}
 	
+	/**
+	 * 
+	 * @param Map with string as Key and Integer as Value
+	 */
 	public void Write(Map <String, Integer> sortedMap) {
 		
 		try {
