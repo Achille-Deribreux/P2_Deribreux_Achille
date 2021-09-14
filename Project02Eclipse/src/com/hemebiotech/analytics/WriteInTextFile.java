@@ -4,6 +4,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 
+/**
+ * 
+ * This class creates a text file to write the data received from a sorted map.
+ *
+ */
 public class WriteInTextFile implements IWriteOutput{
 private String filePath;
 	
@@ -15,10 +20,7 @@ private String filePath;
 		this.filePath = filePath;
 	}
 	
-	/**
-	 * 
-	 * @param Map with string as Key and Integer as Value
-	 */
+	
 	@Override
 	public void write(Map <String, Integer> sortedMap) {
 		
