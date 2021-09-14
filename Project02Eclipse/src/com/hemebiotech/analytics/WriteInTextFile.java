@@ -4,14 +4,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 
-public class Writer {
-	private String filePath;
+public class WriteInTextFile implements IWriteOutput{
+private String filePath;
 	
 	/**
 	 * 
 	 * @param filepath a full or partial path to output file
 	 */
-	public Writer(String filePath) {
+	public WriteInTextFile(String filePath) {
 		this.filePath = filePath;
 	}
 	
@@ -19,7 +19,8 @@ public class Writer {
 	 * 
 	 * @param Map with string as Key and Integer as Value
 	 */
-	public void Write(Map <String, Integer> sortedMap) {
+	@Override
+	public void write(Map <String, Integer> sortedMap) {
 		
 		try {
 			FileWriter writer = new FileWriter (filePath);
