@@ -1,25 +1,24 @@
 package com.hemebiotech.analytics;
 
-
+/**
+ * @author Achille Deribreux
+ *Application that read symptoms from an input file and creates an output file who list symptoms with their occurrence .
+ */
 public class AnalyticsCounter {
 	
 	public static void main(String args[]) throws Exception {
 		
-		/**
-		 *Application permettant de lire des symptômes depuis un fichier et de créer un fichier listant chaque symptome avec son nombre d'occurence.
-		 */
-		
-		//Définir les path des fichiers d'entrée & Sortie.
+		//Define input and output paths
 		final String ENTRY_PATH = "./Project02Eclipse/symptoms.txt";
 		final String RESULT_PATH = "result.out";
 		
-		//Lis les données depuis un fichier
+		//Read Data from a file
 		ReadSymptomDataFromFile read = new ReadSymptomDataFromFile(ENTRY_PATH);
 		
-		//Compte les occurences
+		//Count occurrences
 		Counter count = new Counter(read.GetSymptoms());
 		
-		//Crée un fichier de sortie contenant les symptomes et leurs occurence
+		//Create a output file, listing the symptoms and counting the occurrences
 		WriteInTextFile writeInTextFile = new WriteInTextFile(RESULT_PATH);
 		writeInTextFile.write(count.CountOccurences());
 	}

@@ -4,6 +4,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * 
+ * This class is count the occurrences in a raw list and returns a sorted map
+ *
+ */
 public class Counter {
 	public List<String> symptomsList;
 	
