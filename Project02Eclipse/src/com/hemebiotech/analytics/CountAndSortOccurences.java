@@ -3,28 +3,20 @@ package com.hemebiotech.analytics;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
-
 /**
  * 
  * This class is count the occurrences in a raw list and returns a sorted map
  *
  */
-public class Counter {
-	public List<String> symptomsList;
-	
-	/**
-	 * 
-	 * @param a raw listing of all Symptoms obtained from a data source, duplicates are possible/probable
-	 */
-	 public Counter(List<String> symptomsList) {
-		 this.symptomsList = symptomsList;
-	}
-	 
-	 /**
-	 * 
-	 * @return Map with string symptom as Key and Integer occurrence as Value
-	 */
-	public Map<String, Integer> CountOccurences() {
+public class CountAndSortOccurences implements Analytics {
+
+	@Override
+	public Map<String, Integer> sortedMap(List<String> symptomsList) {
+		/**
+		 * 
+		 * @param a raw listing of all Symptoms obtained from a data source, duplicates are possible/probable
+		 * @return Map with string symptom as Key and Integer occurrence as Value
+		 */
 		Map <String, Integer> symptomsMap = new TreeMap <String, Integer>();
 		
 		for (String symptom : symptomsList) {
@@ -38,4 +30,5 @@ public class Counter {
 		}
 		return symptomsMap;
 	}
+
 }
