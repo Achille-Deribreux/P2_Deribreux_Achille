@@ -12,14 +12,12 @@ public class AnalyticsCounter {
 		final String ENTRY_PATH = "./Project02Eclipse/symptoms.txt";
 		final String RESULT_PATH = "result.out";
 		
-		//Read Data from a file
-		ReadSymptomDataFromFile read = new ReadSymptomDataFromFile(ENTRY_PATH);
+		/**
+		 * @param ISymptomReader implementation , Analytics implementation, IWriteOutput implementation
+		 */
+		Central centralObject = new Central(new ReadSymptomDataFromFile(ENTRY_PATH),new CountAndSortOccurences(), new WriteInTextFile(RESULT_PATH) );
 		
-		//Count occurrences
-		Counter count = new Counter(read.GetSymptoms());
-		
-		//Create a output file, listing the symptoms and counting the occurrences
-		WriteInTextFile writeInTextFile = new WriteInTextFile(RESULT_PATH);
-		writeInTextFile.write(count.CountOccurences());
+		//Call the write method who creates an output file who list symptoms and their occurrence
+		centralObject.write();
 	}
 }
