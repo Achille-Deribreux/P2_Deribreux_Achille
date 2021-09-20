@@ -13,7 +13,7 @@ public class AnalyticsCounter {
 		final String RESULT_PATH = "result.out";
 		
 		/**
-		 * @param ISymptomReader implementation , Analytics implementation, IWriteOutput implementation
+		 * @param ISymptomReader implementation , IAnalytics implementation, IWriteOutput implementation
 		 */
 		ReadAnalyseWrite analyser = new ReadAnalyseWrite(new ReadSymptomDataFromFile(ENTRY_PATH),new CountAndSortOccurences(), new WriteInTextFile(RESULT_PATH) );
 		
