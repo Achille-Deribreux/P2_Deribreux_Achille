@@ -12,11 +12,12 @@ import java.util.Map;
 public class WriteInTextFile implements IWriteOutput{
 private String filePath;
 	
-	/**
-	 * 
-	 * @param filepath a full or partial path to output file
-	 */
+	
 	public WriteInTextFile(String filePath) {
+		/**
+		 * 
+		 * @param filepath a full or partial path to output file
+		 */
 		this.filePath = filePath;
 	}
 	

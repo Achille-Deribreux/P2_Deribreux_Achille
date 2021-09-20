@@ -3,30 +3,24 @@ package com.hemebiotech.analytics;
 import java.util.List;
 import java.util.Map;
 
-/**
- * 
- * @author achillederibreux
- *
- */
-public class Central {
-	
+public class ReadAnalyseWrite {
 	
 	private ISymptomReader getObject;
-	private Analytics sortObject;
+	private IAnalytics sortObject;
 	private IWriteOutput writeObject;
 	
 	
-	public Central( ISymptomReader GetMethod, Analytics SortMethod, IWriteOutput WriteMethod) {
-		this.getObject = GetMethod;
-		this.sortObject = SortMethod;
-		this.writeObject = WriteMethod;
+	public ReadAnalyseWrite( ISymptomReader Get, IAnalytics Sort, IWriteOutput Write) {
+		this.getObject = Get;
+		this.sortObject = Sort;
+		this.writeObject = Write;
 	}
 	
 	public List<String> getData(){
 		/**
 		 * @return a raw listing of all Symptoms obtained from a data source, duplicates are possible/probable
 		 */
-		return getObject.GetSymptoms();
+		return getObject.getSymptoms();
 	}
 	
 	public Map<String, Integer> sortedMap(){

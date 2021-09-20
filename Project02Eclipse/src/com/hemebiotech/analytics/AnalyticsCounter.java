@@ -15,9 +15,9 @@ public class AnalyticsCounter {
 		/**
 		 * @param ISymptomReader implementation , Analytics implementation, IWriteOutput implementation
 		 */
-		Central centralObject = new Central(new ReadSymptomDataFromFile(ENTRY_PATH),new CountAndSortOccurences(), new WriteInTextFile(RESULT_PATH) );
+		ReadAnalyseWrite analyser = new ReadAnalyseWrite(new ReadSymptomDataFromFile(ENTRY_PATH),new CountAndSortOccurences(), new WriteInTextFile(RESULT_PATH) );
 		
 		//Call the write method who creates an output file who list symptoms and their occurrence
-		centralObject.write();
+		analyser.write();
 	}
 }

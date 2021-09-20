@@ -8,7 +8,7 @@ import java.util.TreeMap;
  * This class is count the occurrences in a raw list and returns a sorted map
  *
  */
-public class CountAndSortOccurences implements Analytics {
+public class CountAndSortOccurences implements IAnalytics {
 
 	@Override
 	public Map<String, Integer> sortedMap(List<String> symptomsList) {
